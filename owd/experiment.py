@@ -8,18 +8,16 @@ from datetime import datetime
 
 import numpy as np
 
-import naive_owd_ideal_point
-import naive_owd_with_filtration
-import naive_owd_without_filtration
+from owd.algorithms import ideal_point, with_filtration, without_filtration
 
 # name -> (module, function name). Every algorithm minimises all criteria, takes a list of points
 # and returns (nondominated, n_comparisons); maximised criteria are negated before the call.
 # The module must compare points through its module-level `dominates(a, b)` function –
 # the app wraps it to record which points took part in comparisons.
 ALGORITHMS = {
-    "Algorytm bez filtracji": (naive_owd_without_filtration, "naive_owd_without_filtration"),
-    "Algorytm z filtracją": (naive_owd_with_filtration, "owd_z_filtracja"),
-    "Algorytm punktu idealnego": (naive_owd_ideal_point, "owd_ideal_point"),
+    "Algorytm bez filtracji": (without_filtration, "naive_owd_without_filtration"),
+    "Algorytm z filtracją": (with_filtration, "owd_z_filtracja"),
+    "Algorytm punktu idealnego": (ideal_point, "owd_ideal_point"),
 }
 
 # History table: key -> column header

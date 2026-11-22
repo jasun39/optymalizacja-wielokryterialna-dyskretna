@@ -29,8 +29,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from data_generator import DISTRIBUTIONS, generate_points
-from experiment import (ALGORITHMS, format_correctness, measure_algorithm, nondominated_mask,
+from owd.data_generator import DISTRIBUTIONS, generate_points
+from owd.experiment import (ALGORITHMS, format_correctness, measure_algorithm, nondominated_mask,
                         to_minimisation, verify_pareto)
 
 RAW_COLUMNS = ["n_alternatives", "n_criteria", "repetition", "seed", "algorithm",
