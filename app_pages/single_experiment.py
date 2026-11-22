@@ -6,8 +6,8 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from data_generator import DISTRIBUTIONS, generate_points
-from experiment import (ALGORITHMS, HISTORY_COLUMNS, format_correctness, format_directions,
+from owd.data_generator import DISTRIBUTIONS, generate_points
+from owd.experiment import (ALGORITHMS, HISTORY_COLUMNS, format_correctness, format_directions,
                         history_row, ideal_point, result_csv, run_algorithm)
 
 DEFAULT_MEAN, DEFAULT_STD = 10.0, 3.0
